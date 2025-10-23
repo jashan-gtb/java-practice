@@ -5,21 +5,23 @@ class student{
         System.out.println(this.name);
         System.out.println(this.age);
     }
-    student(String name, int age){      // parameterised constructor
-       /*object name*/ this.name= /*parameter name*/name;
-        this.age= age;
+    student(student s2){    
+       this.name =s2.name;
+       this.age =s2.age;    //copy constructor
     }
-  /*   student(){
-        System.out.println("Constructor call"); //Non parameterised constructor 
-    }*/
+    student(){
+        //default constructor
+    }
 }
 public class classes{
     public static void main(String[] args) {
-        student s1= new student("Jashan", 19);
-        s1.info();
-
-        student s2= new student("Shanky",19);
+        student s1= new student();
+        s1.name="jashan";
+        s1.age=19;
+        student s2= new student(s1);
         s2.info();
+
+        
     }
         
 }
