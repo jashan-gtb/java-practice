@@ -21,6 +21,7 @@ class circle extends shape{
 }
 
 public class inhert {
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+    }
     
 }
