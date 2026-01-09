@@ -1,4 +1,4 @@
-import java.util.*;//package
+//package
 public class loop { //class
     public static void main(String[] args) { //function
          /*    System.out.print("Enter number: ");
@@ -159,7 +159,7 @@ public class loop { //class
             System.out.print("*");
         }
         System.out.println();
-    }
+    }}}
 //solid rohmbus
  /*    for (int i = 1; i <=5; i++) {
         for(int j=1; j<=5-i; j++){
