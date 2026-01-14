@@ -55,7 +55,9 @@ public class quest {
     else{
         return sort(arr, ind+1);}
     }*/
-   public static void move(String str, int ind, char element, String newstr, String newstr2){
+
+        // MOVE ALL 'x' TO THE END OF THE STRING
+   /*public static void move(String str, int ind, char element, String newstr, String newstr2){
     if (ind==str.length()) {
         newstr= newstr + newstr2;   
         System.out.println(newstr);
@@ -69,13 +71,54 @@ public class quest {
         newstr2= newstr2 + currentchar;
     }
     move(str, ind+1, element, newstr, newstr2);
-   }
+   }*/
    
-   
+     // REMOVE DUPLICATES
+    /*public static boolean[] map= new boolean[26];
+    public static void dup(String str, int ind, String newstr){
+        if (ind== str.length()){
+            System.out.println(newstr);
+            return;
+        }
+        char currentchar= str.charAt(ind);
+        if (map[currentchar-'a']== true) {
+            dup(str, ind+1, newstr);
+        }
+        else{
+            newstr= newstr+ currentchar;
+            map[currentchar-'a']= true;
+            dup(str, ind+1, newstr);
+        }
+    }*/
+
+        // SUBSEQUENCES OF A STRING
+    /*public static void seq(String str, int ind, String newstr){
+        if (ind==str.length()) {
+            System.out.println(newstr);
+            return;
+        }
+        char currentchar= str.charAt(ind);
+        //to be
+        seq(str, ind+1, newstr+ currentchar);
+        //not to be
+        seq(str, ind+1, newstr);
+    }*/
+
+        // PRINT KEYPAD COMBINATIONS
+    public static String[] key= {".","abc","def","ghi","jkl","mno","pqr","stu","vwx","yz"};
+    public static void printcomb(String str, int ind, String combination){
+        if (ind == str.length()) {
+            System.out.println(combination);
+            return;
+        }
+        char currentchar= str.charAt(ind);
+        String map=key[currentchar-'0'];
+        for (int i = 0; i < map.length(); i++) {
+            printcomb(str, ind+1, combination+map.charAt(i));
+        }
+    }
     public static void main(String[] args) {
-        String str= "abacdeag";
-        String newstr="";
-        String newstr2="";
-        move(str, 0, 'a', newstr, newstr2);
+        String str= "45";
+        printcomb(str, 0, "");
     }
 }
